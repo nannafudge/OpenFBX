@@ -1,0 +1,204 @@
+LIBRARY ofbx
+EXPORTS
+    ; OFBX.h
+    SecondsToFbxTime=secondsToFbxTime
+    FbxTimeToSeconds=fbxTimeToSeconds
+    GetError=getError
+    Load=load
+    ObjectGetParent=getParent
+    ObjectResolveObjectLinkInt=?resolveObjectLink@Object@ofbx@@QEBAPEAU12@H@Z
+    ObjectResolveObjectLinkType=?resolveObjectLink@Object@ofbx@@QEBAPEAU12@W4Type@12@PEBDH@Z
+    ObjectResolveObjectLinkReverse=resolveObjectLinkReverse
+    ObjectGetScene=getScene
+    ObjectGetLocalTransform=getLocalTransform
+    ObjectGetGlobalTransform=getGlobalTransform
+    ObjectGetLocalScaling=getLocalScaling
+    ObjectGetLocalRotation=getLocalRotation
+    ObjectGetPreRotation=getPreRotation
+    ObjectGetLocalTranslation=getLocalTranslation
+    ObjectEvalLocal1=?evalLocal@Object@ofbx@@QEBA?AUMatrix@2@AEBUVec3@2@00@Z
+    ObjectEvalLocal2=?evalLocal@Object@ofbx@@QEBA?AUMatrix@2@AEBUVec3@2@0@Z
+    ObjectIsNode=isNode
+
+    ObjectIsNodeGetScalingPivot=getScalingPivot
+    ObjectIsNodeGetScalingOffset=getScalingOffset
+    ObjectIsNodeGetPostRotation=getPostRotation
+    ObjectIsNodeGetRotationPivot=getRotationPivot
+    ObjectIsNodeGetRotationOffset=getRotationOffset
+    ObjectIsNodeGetRotationOrder=getRotationOrder
+    PostprocessBlendShapeChannel=?postprocess@BlendShapeChannelImpl@ofbx@@QEAA_NAEAUAllocator@2@@Z
+    PostprocessCluter=?postprocess@ClusterImpl@ofbx@@QEAA_NAEAUAllocator@2@@Z
+    PostprocessPose=?postprocess@PoseImpl@ofbx@@QEAA_NPEAUScene@2@@Z
+    PostprocessShape=?postprocess@ShapeImpl@ofbx@@QEAA_NPEAUGeometryImpl@2@AEAUAllocator@2@@Z
+    FromString=fromString
+    ParseVideo=parseVideo
+    GetEmebeddedData=getEmebeddedData
+
+    DataViewToU64=toU64
+    DataViewToI64=toI64
+    DataViewToInt=toInt
+    DataViewToU32=toU32
+    DataViewToDouble=toDouble
+    DataViewToFloat=toFloat
+
+    AnimationCurveImplGetType=?getType@AnimationCurveImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    AnimationCurveNodeImplGetType=?getType@AnimationCurveNodeImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    AnimationLayerImplGetType=?getType@AnimationLayerImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    AnimationStackImplGetType=?getType@AnimationStackImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    BlendShapeChannelImplGetType=?getType@BlendShapeChannelImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    BlendShapeImplGetType=?getType@BlendShapeImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    ClusterImplGetType=?getType@ClusterImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    GeometryImplGetType=?getType@GeometryImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    LimbNodeImplGetType=?getType@LimbNodeImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    MaterialImplGetType=?getType@MaterialImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    MeshImplGetType=?getType@MeshImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    NodeAttributeImplGetType=?getType@NodeAttributeImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    NullImplGetType=?getType@NullImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    PoseImplGetType=?getType@PoseImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    PropertyGetType=?getType@Property@ofbx@@UEBA?AW4Type@IElementProperty@2@XZ
+    RootGetType=?getType@Root@ofbx@@UEBA?AW4Type@Object@2@XZ
+    ShapeImplGetType=?getType@ShapeImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    SkinImplGetType=?getType@SkinImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+    TextureImplGetType=?getType@TextureImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
+
+    ElementPropertyGetNext=getNext
+    OptionalErrorUChar=?getValue@?$OptionalError@E@ofbx@@QEBAEXZ
+    OptionalErrorUInt=?getValue@?$OptionalError@I@ofbx@@QEBAIXZ
+    OptionalErrorElement=?getValue@?$OptionalError@PEAUElement@ofbx@@@ofbx@@QEBAPEAUElement@2@XZ
+    OptionalErrorObject=?getValue@?$OptionalError@PEAUObject@ofbx@@@ofbx@@QEBAPEAUObject@2@XZ
+    OptionalErrorProperty=?getValue@?$OptionalError@PEAUProperty@ofbx@@@ofbx@@QEBAPEAUProperty@2@XZ
+    OptionalErrorDataView=?getValue@?$OptionalError@UDataView@ofbx@@@ofbx@@QEBA?AUDataView@2@XZ
+    OptionalError__int64=?getValue@?$OptionalError@_K@ofbx@@QEBA_KXZ
+    DataViewProperty=?getValue@Property@ofbx@@UEBA?AUDataView@2@XZ
+
+    GetCount=getCount
+
+    PropertygetValuesInt=?getValues@Property@ofbx@@UEBA_NPEAHH@Z
+    PropertygetValuesFloat=?getValues@Property@ofbx@@UEBA_NPEAMH@Z
+    PropertygetValuesDouble=?getValues@Property@ofbx@@UEBA_NPEANH@Z
+    PropertygetValues__int64=?getValues@Property@ofbx@@UEBA_NPEA_JH@Z
+    PropertygetValuesUnsigned__int64=?getValues@Property@ofbx@@UEBA_NPEA_KH@Z
+
+    GetFirstChild=getFirstChild
+    GetSibling=getSibling
+    GetID=getID
+    GetFirstProperty=getFirstProperty
+
+    GetMatrix=getMatrix
+    GetNode=getNode
+
+    TextureGetFileName=getFileName
+    TextureGetRelativeFileName=getRelativeFileName
+    TextureGetEmebeddedData=getEmebeddedData
+    
+    MaterialGetDiffuseColor=getDiffuseColor
+    MaterialGetSpecularColor=getSpecularColor
+    MaterialGetReflectionColor=getReflectionColor
+    MaterialGetAmbientColor=getAmbientColor
+    MaterialGetEmissiveColor=getEmissiveColor
+    MaterialGetDiffuseFactor=getDiffuseFactor
+    MaterialGetSpecularFactor=getSpecularFactor
+    MaterialGetReflectionFactor=getReflectionFactor
+    MaterialGetShininess=getShininess
+    MaterialGetShininessExponent=getShininessExponent
+    MaterialGetAmbientFactor=getAmbientFactor
+    MaterialGetBumpFactor=getBumpFactor
+    MaterialGetEmissiveFactor=getEmissiveFactor
+    MaterialGetTexture=getTexture
+
+    ClusterGetIndices=getIndices
+    ClusterGetIndicesCount=getIndicesCount
+    ClusterGetWeights=getWeights
+    ClusterGetWeightsCount=getWeightsCount
+    ClusterGetTransformMatrix=getTransformMatrix
+    ClusterGetTransformLinkMatrix=getTransformLinkMatrix
+    ClusterGetLink=getLink
+
+    SkinGetClusterCount=getClusterCount
+    SkinGetCluster=getCluster
+
+    BlendShapeChannelGetDeformPercent=getDeformPercent
+    BlendShapeChannelGetShapeCount=getShapeCount
+    BlendShapeChannelGetShape=getShape
+
+    BlendShapeGetBlendShapeChannelCount=getBlendShapeChannelCount
+    BlendShapeGetBlendShapeChannel=getBlendShapeChannel
+
+    NodeAttributeGetAttributeType=getAttributeType
+
+    GeometryGetFaceIndices=getFaceIndices
+    GeometryGetIndexCount=getIndexCount
+    GeometryGetUVs=getUVs
+    GeometryGetColors=getColors
+    GeometryGetTangents=getTangents
+    GeometryGetSkin=getSkin
+    GeometryGetBlendShape=getBlendShape
+    GeometryGetMaterials=getMaterials
+
+    MeshGetPose=getPose
+    MeshGetGeometry=getGeometry
+    MeshGetGeometricMatrix=getGeometricMatrix
+    MeshGetMaterial=getMaterial
+    MeshGetMaterialCount=getMaterialCount
+
+    AnimationStackGetLayer=getLayer
+
+    AnimationLayerImplGetCurveNode=?getCurveNode@AnimationLayerImpl@ofbx@@UEBAPEBUAnimationCurveNode@2@AEBUObject@2@PEBD@Z
+    AnimationCurveNodeGetCurveNode=?getCurveNode@AnimationLayerImpl@ofbx@@UEBAPEBUAnimationCurveNode@2@H@Z
+
+    GeometryImplGetNormals=?getNormals@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetNormals=?getNormals@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetVertexCount=?getVertexCount@GeometryImpl@ofbx@@UEBAHXZ
+    ShapeImplGetVertexCount=?getVertexCount@ShapeImpl@ofbx@@UEBAHXZ
+
+    GeometryImplGetVertices=?getVertices@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetVertices=?getVertices@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetNormals=?getNormals@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetNormals=?getNormals@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetVertexCount=?getVertexCount@GeometryImpl@ofbx@@UEBAHXZ
+    ShapeImplGetVertexCount=?getVertexCount@ShapeImpl@ofbx@@UEBAHXZ
+
+    GeometryImplgetVertices=?getVertices@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplgetVertices=?getVertices@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetNormals=?getNormals@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetNormals=?getNormals@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetVertexCount=?getVertexCount@GeometryImpl@ofbx@@UEBAHXZ
+    ShapeImplGetVertexCount=?getVertexCount@ShapeImpl@ofbx@@UEBAHXZ
+
+    GeometryImplGetVertices=?getVertices@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetVertices=?getVertices@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetNormals=?getNormals@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetNormals=?getNormals@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    GeometryImplGetVertexCount=?getVertexCount@GeometryImpl@ofbx@@UEBAHXZ
+    ShapeImplGetVertexCount=?getVertexCount@ShapeImpl@ofbx@@UEBAHXZ
+
+    GeometryImplGetVertices=?getVertices@GeometryImpl@ofbx@@UEBAPEBUVec3@2@XZ
+    ShapeImplGetVertices=?getVertices@ShapeImpl@ofbx@@UEBAPEBUVec3@2@XZ
+
+    AnimationCurveGetKeyCount=getKeyCount
+    AnimationCurveGetKeyTime=getKeyTime
+    AnimationCurveGetKeyValue=getKeyValue
+
+    AnimationCurveNodeGetCurve=getCurve
+    AnimationCurveNodeGetNodeLocalTransform=getNodeLocalTransform
+    AnimationCurveNodeGetBone=getBone
+
+    SceneSestroy=?destroy@Scene@ofbx@@UEAAXXZ
+    SceneGetRootElement=getRootElement
+    SceneGetRoot=getRoot
+    SceneGetTakeInfo=getTakeInfo
+    SceneGetMeshCount=getMeshCount
+    SceneGetSceneFrameRate=getSceneFrameRate
+    SceneGetGlobalSettings=getGlobalSettings
+    SceneGetMesh=getMesh
+    SceneGetAnimationStackCount=getAnimationStackCount
+    SceneGetAnimationStack=getAnimationStack
+    SceneGetAllObjects=getAllObjects
+    SceneGetAllObjectCount=getAllObjectCount
