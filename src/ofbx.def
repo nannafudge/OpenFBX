@@ -5,6 +5,7 @@ EXPORTS
     FbxTimeToSeconds=fbxTimeToSeconds
     GetError=getError
     Load=load
+
     ObjectGetParent=getParent
     ObjectResolveObjectLinkInt=?resolveObjectLink@Object@ofbx@@QEBAPEAU12@H@Z
     ObjectResolveObjectLinkType=?resolveObjectLink@Object@ofbx@@QEBAPEAU12@W4Type@12@PEBDH@Z
@@ -19,13 +20,13 @@ EXPORTS
     ObjectEvalLocal1=?evalLocal@Object@ofbx@@QEBA?AUMatrix@2@AEBUVec3@2@00@Z
     ObjectEvalLocal2=?evalLocal@Object@ofbx@@QEBA?AUMatrix@2@AEBUVec3@2@0@Z
     ObjectIsNode=isNode
+    ObjectGetScalingPivot=getScalingPivot
+    ObjectGetScalingOffset=getScalingOffset
+    ObjectGetPostRotation=getPostRotation
+    ObjectGetRotationPivot=getRotationPivot
+    ObjectGetRotationOffset=getRotationOffset
+    ObjectGetRotationOrder=getRotationOrder
 
-    ObjectIsNodeGetScalingPivot=getScalingPivot
-    ObjectIsNodeGetScalingOffset=getScalingOffset
-    ObjectIsNodeGetPostRotation=getPostRotation
-    ObjectIsNodeGetRotationPivot=getRotationPivot
-    ObjectIsNodeGetRotationOffset=getRotationOffset
-    ObjectIsNodeGetRotationOrder=getRotationOrder
     PostprocessBlendShapeChannel=?postprocess@BlendShapeChannelImpl@ofbx@@QEAA_NAEAUAllocator@2@@Z
     PostprocessCluter=?postprocess@ClusterImpl@ofbx@@QEAA_NAEAUAllocator@2@@Z
     PostprocessPose=?postprocess@PoseImpl@ofbx@@QEAA_NPEAUScene@2@@Z
@@ -61,7 +62,7 @@ EXPORTS
     SkinImplGetType=?getType@SkinImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
     TextureImplGetType=?getType@TextureImpl@ofbx@@UEBA?AW4Type@Object@2@XZ
 
-    ElementPropertyGetNext=getNext
+    IElementPropertyGetNext=getNext
     OptionalErrorUChar=?getValue@?$OptionalError@E@ofbx@@QEBAEXZ
     OptionalErrorUInt=?getValue@?$OptionalError@I@ofbx@@QEBAIXZ
     OptionalErrorElement=?getValue@?$OptionalError@PEAUElement@ofbx@@@ofbx@@QEBAPEAUElement@2@XZ
@@ -71,7 +72,7 @@ EXPORTS
     OptionalError__int64=?getValue@?$OptionalError@_K@ofbx@@QEBA_KXZ
     DataViewProperty=?getValue@Property@ofbx@@UEBA?AUDataView@2@XZ
 
-    GetCount=getCount
+    IElementPropertyGetCount=getCount
 
     PropertygetValuesInt=?getValues@Property@ofbx@@UEBA_NPEAHH@Z
     PropertygetValuesFloat=?getValues@Property@ofbx@@UEBA_NPEAMH@Z
@@ -79,10 +80,10 @@ EXPORTS
     PropertygetValues__int64=?getValues@Property@ofbx@@UEBA_NPEA_JH@Z
     PropertygetValuesUnsigned__int64=?getValues@Property@ofbx@@UEBA_NPEA_KH@Z
 
-    GetFirstChild=getFirstChild
-    GetSibling=getSibling
-    GetID=getID
-    GetFirstProperty=getFirstProperty
+    IElementGetFirstChild=getFirstChild
+    IElementGetSibling=getSibling
+    IElementGetID=getID
+    IElementGetFirstProperty=getFirstProperty
 
     GetMatrix=getMatrix
     GetNode=getNode
@@ -190,15 +191,42 @@ EXPORTS
     AnimationCurveNodeGetNodeLocalTransform=getNodeLocalTransform
     AnimationCurveNodeGetBone=getBone
 
-    SceneSestroy=?destroy@Scene@ofbx@@UEAAXXZ
-    SceneGetRootElement=getRootElement
-    SceneGetRoot=getRoot
-    SceneGetTakeInfo=getTakeInfo
-    SceneGetMeshCount=getMeshCount
-    SceneGetSceneFrameRate=getSceneFrameRate
-    SceneGetGlobalSettings=getGlobalSettings
-    SceneGetMesh=getMesh
-    SceneGetAnimationStackCount=getAnimationStackCount
-    SceneGetAnimationStack=getAnimationStack
-    SceneGetAllObjects=getAllObjects
-    SceneGetAllObjectCount=getAllObjectCount
+    ISceneDestroy=?destroy@Scene@ofbx@@UEAAXXZ
+    ISceneGetRootElement=getRootElement
+    ISceneGetRoot=getRoot
+    ISceneGetTakeInfo=getTakeInfo
+    ISceneGetMeshCount=getMeshCount
+    ISceneGetSceneFrameRate=getSceneFrameRate
+    ISceneGetGlobalSettings=getGlobalSettings
+    ISceneGetMesh=getMesh
+    ISceneGetAnimationStackCount=getAnimationStackCount
+    ISceneGetAnimationStack=getAnimationStack
+    ISceneGetAllObjects=getAllObjects
+    ISceneGetAllObjectCount=getAllObjectCount
+
+    ; ofbx.cpp
+
+    UnsignedCharAllocatorAllocate=?allocate@?$allocator@E@std@@QEAAPEAE_K@Z
+    IntAllocatorAllocate=?allocate@?$allocator@H@std@@QEAAPEAH_K@Z
+    FloatAllocatorAllocate=?allocate@?$allocator@M@std@@QEAAPEAM_K@Z
+    DoubleAllocatorAllocate=?allocate@?$allocator@N@std@@QEAAPEAN_K@Z
+    Int64AllocatorAllocate=?allocate@?$allocator@_J@std@@QEAAPEA_J_K@Z
+
+    AnimationCurveNodeImplAllocate=?allocate@?$allocator@PEAUAnimationCurveNodeImpl@ofbx@@@std@@QEAAPEAPEAUAnimationCurveNodeImpl@ofbx@@_K@Z
+    AnimationStackAllocate=?allocate@?$allocator@PEAUAnimationStack@ofbx@@@std@@QEAAPEAPEAUAnimationStack@ofbx@@_K@Z
+    BlendShapeChannelAllocate=?allocate@?$allocator@PEAUBlendShapeChannel@ofbx@@@std@@QEAAPEAPEAUBlendShapeChannel@ofbx@@_K@Z
+    ClusterAllocate=?allocate@?$allocator@PEAUCluster@ofbx@@@std@@QEAAPEAPEAUCluster@ofbx@@_K@Z
+    MeshAllocate=?allocate@?$allocator@PEAUMesh@ofbx@@@std@@QEAAPEAPEAUMesh@ofbx@@_K@Z
+    ObjectAllocate=?allocate@?$allocator@PEAUObject@ofbx@@@std@@QEAAPEAPEAUObject@ofbx@@_K@Z
+    ShapeAllocate=?allocate@?$allocator@PEAUShape@ofbx@@@std@@QEAAPEAPEAUShape@ofbx@@_K@Z
+    MaterialAllocate=?allocate@?$allocator@PEBUMaterial@ofbx@@@std@@QEAAPEAPEBUMaterial@ofbx@@_K@Z
+    _List_nodeAllocate=?allocate@?$allocator@U?$_List_node@U?$pair@$$CB_KUObjectPair@Scene@ofbx@@@std@@PEAX@std@@@std@@QEAAPEAU?$_List_node@U?$pair@$$CB_KUObjectPair@Scene@ofbx@@@std@@PEAX@2@_K@Z
+    SceneConnectionAllocate=?allocate@?$allocator@UConnection@Scene@ofbx@@@std@@QEAAPEAUConnection@Scene@ofbx@@_K@Z
+    GeometryImplAllocate=?allocate@?$allocator@UNewVertex@GeometryImpl@ofbx@@@std@@QEAAPEAUNewVertex@GeometryImpl@ofbx@@_K@Z
+    ParseGeometryJobAllocate=?allocate@?$allocator@UParseGeometryJob@ofbx@@@std@@QEAAPEAUParseGeometryJob@ofbx@@_K@Z
+    TakeInfoAllocate=?allocate@?$allocator@UTakeInfo@ofbx@@@std@@QEAAPEAUTakeInfo@ofbx@@_K@Z
+    Vec2Allocate=?allocate@?$allocator@UVec2@ofbx@@@std@@QEAAPEAUVec2@ofbx@@_K@Z
+    Vec3Allocate=?allocate@?$allocator@UVec3@ofbx@@@std@@QEAAPEAUVec3@ofbx@@_K@Z
+    Vec4Allocate=?allocate@?$allocator@UVec4@ofbx@@@std@@QEAAPEAUVec4@ofbx@@_K@Z
+    VideoAllocate=?allocate@?$allocator@UVideo@ofbx@@@std@@QEAAPEAUVideo@ofbx@@_K@Z
+    _List_unchecked_iteratorAllocate=?allocate@?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CB_KUObjectPair@Scene@ofbx@@@std@@@std@@@std@@@std@@@std@@QEAAPEAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CB_KUObjectPair@Scene@ofbx@@@std@@@std@@@std@@@2@_K@Z
